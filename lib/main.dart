@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         child: Center(
           
           child: Container(
-            child: const Text("welcome helo",style: TextStyle(color: Color.fromARGB(255, 47, 4, 4)),),
+            child: const Text("welcome",style: TextStyle(color: Color.fromARGB(255, 47, 4, 4)),),
             
             
           ),
