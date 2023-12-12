@@ -5,8 +5,11 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: Center(
+    return Scaffold(
+      appBar: AppBar(title: Text("Caralog App")),
+      
+      drawer: const Drawer(),
+      body: Center(
         child: Container(
           child: const Text(
             "welcome to chalang ",
