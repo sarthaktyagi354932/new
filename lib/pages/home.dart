@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
       body: Center(
         child: Container(
           child: const Text(
-            "welcome to 30 day chalang ",
+            "welcome to 30 days chalang ",
             style: TextStyle(color: Color.fromARGB(255, 232, 224, 224)),
           ),
         ),
