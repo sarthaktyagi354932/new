@@ -42,7 +42,7 @@ class LogingPage extends StatelessWidget {
             height: 30,
           ),
           ElevatedButton(
-            child: Text("loging"),
+            child: Text("loging go "),
             style: TextButton.styleFrom(),
             onPressed: () {
               print("welcome");
