@@ -3,9 +3,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_30_day/utils/routes.dart';
 
-class LogingPage extends StatelessWidget {
+class LogingPage extends StatefulWidget {
   const LogingPage({super.key});
 
+  @override
+  State<LogingPage> createState() => _LogingPageState();
+}
+
+class _LogingPageState extends State<LogingPage> {
+  String name = "";
+  bool changeButton = false;
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -25,7 +32,7 @@ class LogingPage extends StatelessWidget {
               height: 30,
             ),
             Text(
-              "yah gareeb inke ma ke chut",
+              "welcome $name",
               style: TextStyle(
                 fontSize: 24,
               ),
@@ -39,6 +46,10 @@ class LogingPage extends StatelessWidget {
                       hintText: "enter username",
                       labelText: "username",
                     ),
+                    onChanged: (value) {
+                      name = value;
+                      setState(() {});
+                    },
                   ),
                   TextField(
                     obscureText: true,
@@ -53,17 +64,50 @@ class LogingPage extends StatelessWidget {
             SizedBox(
               height: 30,
             ),
-            ElevatedButton(
-              child: Text(
-                "loging go ",
-                style: TextStyle(color: Colors.white),
-              ),
-              style: TextButton.styleFrom(
-                  minimumSize: Size(200, 30), backgroundColor: Colors.purple),
-              onPressed: () {
+            InkWell(
+              onTap: () async {
+                setState(() {
+                  changeButton = true;
+                });
+                await Future.delayed(Duration(seconds: 1));
                 Navigator.pushNamed(context, MyRouts.homeRouts);
               },
+              child: AnimatedContainer(
+                duration: Duration(seconds: 1),
+                decoration: BoxDecoration(
+                  color: Colors.deepPurple,
+                  borderRadius: BorderRadius.circular( changeButton ? 50 : 8),
+                  
+                ),
+                width: changeButton ? 50: 150,
+                
+                height: 50,
+                // color: Colors.deepOrange,
+                alignment: Alignment.center,
+                child: changeButton ? 
+                Icon(Icons.done,
+                color: Colors.white,) :
+                Text(
+                  "login",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18),
+                ),
+              ),
             )
+
+            // ElevatedButton(
+            //   child: Text(
+            //     "loging go ",
+            //     style: TextStyle(color: Colors.white),
+            //   ),
+            //   style: TextButton.styleFrom(
+            //       minimumSize: Size(200, 60), backgroundColor: Colors.purple),
+            //   onPressed: () {
+            //     Navigator.pushNamed(context, MyRouts.homeRouts);
+            //   },
+            // )
           ],
         ),
       ),
