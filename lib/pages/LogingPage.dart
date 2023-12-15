@@ -16,7 +16,7 @@ class _LogingPageState extends State<LogingPage> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.white,
+      // color: Colors.white,
       child: SingleChildScrollView(
         child: Column(
           children: [
@@ -32,7 +32,7 @@ class _LogingPageState extends State<LogingPage> {
               height: 30,
             ),
             Text(
-              "welcome $name",
+              "welcomez $name",
               style: TextStyle(
                 fontSize: 24,
               ),
